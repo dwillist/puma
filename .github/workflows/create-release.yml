@@ -46,7 +46,7 @@ jobs:
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
     - name: Tag
       id: tag
-      uses: paketo-buildpacks/github-config/actions/tag@master
+      uses: dwillist/github-config/actions/tag@master
     - name: Package
       run: PACKAGE_DIR=artifact ./scripts/package.sh --version "${{ steps.tag.outputs.tag }}" --archive
     - name: Create Release Notes
